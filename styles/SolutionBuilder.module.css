@@ -1,0 +1,138 @@
+div.parentPage{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+div.wrapperImage{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+div.parentImage{
+    min-height: 100vh;
+    height: 100%;
+    position: relative;        
+}
+
+ul.stepList{
+    max-width: 40rem;
+    position: relative;
+}
+
+ul.stepList:before{
+    content: " ";
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: #c0c0c0;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+ul.stepList > li:not(:last-child){
+    margin-bottom: 1.5rem;
+}
+
+
+div.backArticle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255,  0.7);
+    min-height: 100vh;
+    max-width: 75vw;
+    backdrop-filter: blur(10px);    
+    padding: 4.5rem 3.75rem;
+    box-sizing: border-box;
+}
+
+
+article.contentArticle{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;                    
+    gap: 2rem;    
+    max-width: 50rem;
+}
+
+li.solutionStep{
+    padding: 1rem 4rem;
+    background-color: #fff;
+    border-radius: 6px;
+    color: #333333;
+    text-align: center;    
+    border: 1px solid #c0c0c0;
+    cursor: default;
+    transition: box-shadow 0.2s, border 0.2s ease-out;
+}
+
+li.solutionStep:hover{
+    border: 1px solid #fff;
+    box-shadow: 0 2px 6px 2px rgba(0,0, 0,0.25);
+}
+
+li.solutionStepold{
+    padding: 1rem 4rem;
+    background-color: #fff;
+    border-radius: 6px;
+    color: #333333;
+    text-align: center;
+    box-shadow: 0 0 4px 2px rgba(0,0, 0,0.25);
+    cursor: default;
+}
+
+@media only screen and (max-width: 768px) {
+
+    div.backArticle{
+        max-width: 85vw;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    div.backArticle{
+        padding: 4.5rem 2rem;
+    }
+
+    ul.stepList > li:not(:last-child){
+        margin-bottom: 1rem;
+    }
+
+
+    li.solutionStep{
+        padding: 1rem 2.5rem;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 500px) {
+
+    div.backArticle{
+        max-width: unset;
+    }
+
+    li.solutionStep{
+        padding: 1rem 1.5rem;
+    }
+    
+
+}
+
+@media only screen and (max-width: 400px) {
+
+    li.solutionStep{
+        padding: 1rem 1rem;
+    }
+    
+
+}

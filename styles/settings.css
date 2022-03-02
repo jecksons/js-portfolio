@@ -1,0 +1,121 @@
+:root{	
+    --action: #6CCFF6;
+    --action-hover: #20AADF;
+    --action-text: #202020;
+	--background: #202020;
+	--background-hover: #e0e0e0;
+	--surface: #fff;	
+	--surface-hover: #f0f0f0;	
+	--prim-text: #fff;
+	--prim-text-hover: #707070;
+	--prim-disabled: #bababa;
+	--success-green: #06d6a0;
+	--grey-1: #707070;
+	--grey-2: #F1F1F1;
+	--prim-4-text:#FFF;
+	--prim-opacity-14: rgba(0, 187, 249, 0.14);
+}
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@font-face {
+    font-family: 'Exo 2';
+    src: url('./fonts/Exo2-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 100 900;
+    font-stretch: 25% 151%;
+}
+
+@font-face {
+    font-family: 'Exo 3';
+    src: url('./fonts/exo2-variablefont_wght-webfont.woff2') format('woff2 supports variations'),
+        url('./fonts/exo2-variablefont_wght-webfont.woff2') format('woff-variations');
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+    font-family: "Exo 2", 'Arial', Courier, monospace;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    overflow-x: hidden;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input,
+button,
+h1, h2, h3, h4, h5, h6,
+label,
+strong,
+div,
+a{
+	font-family: "Exo 2", 'Arial', Courier, monospace;
+	font-size: 1rem;
+    color: var(--prim-text);
+}
+
+p{
+    line-height: 2rem;
+    white-space: pre-line;
+}
+
+
+::-webkit-scrollbar {
+	width: 8px;	
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+	background: #202020 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #505050; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #909090; 
+}

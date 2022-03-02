@@ -1,0 +1,80 @@
+
+div.fixed-menu{
+    position: fixed;
+    right: -2rem;    
+    
+    top: 10rem;
+    z-index: 9999;
+}
+
+button.fixed-menu-button{
+    transform: rotate(270deg);
+    outline: none;
+    border: 0;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    color: #333333;
+    font-size: 0.875rem;
+    font-weight: 600;
+    align-items: center;
+    border-radius: 20px 20px 0 0 ;
+    background-color: #c0c0c0;
+    box-shadow: inset 2px 2px 2px 0 rgba(0, 0,0, 0.5);
+    z-index: 9998;
+}
+
+button.fixed-menu-button.expanded{    
+    border-radius: 0;    
+    box-shadow: none;    
+}
+
+button.fixed-menu-button img{
+    transform: rotate(270deg);    
+}
+
+
+button.fixed-menu-button.expanded img{
+    transform: rotate(90deg);    
+}
+
+nav.fixed-menu-content{
+    position: absolute;
+    top: -30px;
+    right: 62px;
+    width: max-content;
+    flex-direction: column;    
+    padding: 1.5rem;
+    border-radius: 10px 0 10px 10px;    
+    background-image: linear-gradient(90deg, #909090, #c0c0c0 );
+    box-shadow: inset 2px -2px 2px 0 rgba(0, 0,0, 0.5);
+    display: none;
+    gap: 1rem;
+}
+
+nav.fixed-menu-content.expanded{
+    display: flex;
+}
+
+
+a.btn-side-menu,
+a.btn-side-menu-current{
+    color: #333333;
+    padding: 0 0.5rem;
+    border-left: 3px solid transparent;
+}
+
+a.btn-side-menu:hover,
+a.btn-side-menu-current:hover{
+    color: #505050;
+    text-decoration: underline;
+}
+
+
+a.btn-side-menu-current{    
+    border-left: 3px solid #333333;
+    font-weight: 600;
+
+}

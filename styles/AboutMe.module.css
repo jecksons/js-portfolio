@@ -1,0 +1,109 @@
+section.bodyParent{
+    display: flex;
+    flex-direction: row;
+    gap: 4.5rem;    
+    max-width: 80vw;
+    flex: 1;    
+    align-items: center;    
+}
+
+div.contentParent{
+    display: flex;
+    flex-direction: column;            
+    align-items: center;
+    padding: 4.5rem 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+div.imgParent{
+    flex: 1;
+    position: relative;
+    height: 450px;    
+}
+
+div.imgLaptop{    
+    width: 90%;
+}
+
+ul.profStats{
+    list-style-type: disc;
+    margin-left: 3rem;
+}
+
+div.imgLaptop span{
+    box-shadow: 5px 5px 4px 0 rgba(0,0,0, 0.25);
+    
+}
+
+div.imgPhoto{
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 65%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), #fff );
+    box-shadow: 5px 5px 4px 0 rgba(0,0,0, 0.25);
+}
+
+@media only screen and (max-width: 1500px) {
+
+    div.imgParent{
+        flex: 0.5;
+    }
+
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+    section.bodyParent{
+        max-width: 90vw;        
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+    div.contentParent{
+        gap: 3rem;
+        padding: 4.5rem 4rem;
+    }
+
+    section.bodyParent{
+        flex-direction: column;
+        gap: 2rem;            
+        justify-content: flex-start;     
+        max-width: unset;   
+    }
+
+    div.imgParent{
+        flex: unset;
+        max-width: 400px;
+        height: 350px;
+    }
+
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    div.contentParent{
+        padding: 4.5rem 2.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    div.imgParent{
+        height: calc(70vw);
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    div.contentParent{
+        padding: 4.5rem 1.5rem;
+    }
+
+}
