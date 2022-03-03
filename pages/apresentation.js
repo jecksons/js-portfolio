@@ -17,23 +17,23 @@ export default function Apresentation(props) {
             <div className={`${styles.parentApresentation} parent-page-id`}  id="home" >
                 <header className="row-1 just-start" >
                     <div className={styles.imgLogo}>
-                        <Image  src={logo} width={75} height={75}  />
+                        <Image  src={logo} width={75} height={75} alt="logo" />
                     </div>
                     <div className="col-05 align-start">
                         <h1 className={styles.title}>Jéckson Schwengber</h1>
                         <h3 className={styles.subtitle}>JAVASCRIPT FULLSTACK SOFTWARE ENGINEER</h3>
                         <section className={styles.languageSelection}>
                             <button className="btn" onClick={() => i18n.changeLanguage('en-US')}>
-                                <Image src={usFlag} width={32}   />
+                                <Image src={usFlag} width={32}  alt="usa flag" />
                             </button>
                             <button className="btn" onClick={() => i18n.changeLanguage('pt-BR')}>
-                                <Image src={brazilFlag} width={32}  />
+                                <Image src={brazilFlag} width={32} alt="brazil flag" />
                             </button>
                         </section> 
                     </div>                    
                 </header>
                 <div className={styles.backImage}>
-                    <Image src={photoBig} layout="responsive" />
+                    <Image src={photoBig} layout="responsive" alt="author" />
                 </div>
                 <div className={styles.backShadow}> </div>
                 <article className={`col-1 align-start ${styles.initialArticle}`}>

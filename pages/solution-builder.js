@@ -22,7 +22,7 @@ export default function SolutionBuilder(props) {
         <div className={`${styles.parentPage} parent-page-id `}  id="solution-builder" >
             <div className={`${styles.wrapperImage} `} >
                 <div className={styles.parentImage}>                    
-                    <Image  src={tableImg} layout="fill" objectFit="cover"  />
+                    <Image  src={tableImg} layout="fill" objectFit="cover" alt="people table" />
                 </div>
             </div>            
             <div className={styles.backArticle}>

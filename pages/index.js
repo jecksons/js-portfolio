@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useCallback, useEffect, useState } from "react";
 import FixedMenu from "../components/fixed-menu";
 import AboutMe from "./about-me";
@@ -8,10 +9,7 @@ import SolutionBuilder from "./solution-builder";
 
 
 export default function Home() {
-
-    useEffect(() => {
-        document.title = "Jéckson Schwengber"
-    }, []);
+    
 
     const refTimeoutCurrSection = useState(null);
 
@@ -46,6 +44,12 @@ export default function Home() {
 
     return (
         <div className="pos-relative">
+            <Head>
+                <title>Jéckson Schwengber</title>
+                <meta name="description" content="JavaScript Fullstack Engineer Portfolio"  />
+                <meta name="keywords" content="JavaScript, CSS, HTML, React, React Native, NodeJs, Freelancer"  />
+                <meta name="author" content="Jéckson Schwengber" />
+            </Head>
             <FixedMenu currentMenu={currSection} />
             <Apresentation />
             <AboutMe />
