@@ -27,10 +27,10 @@ export default function AboutMe(props) {
                 <section className={styles.bodyParent}>
                     <div className={styles.imgParent}>
                         <div className={styles.imgLaptop}>
-                            <Image src={laptopImg}  />
+                            <Image src={laptopImg} alt="laptop" />
                         </div>
                         <div className={styles.imgPhoto}>
-                            <Image src={photoImg} />
+                            <Image src={photoImg} alt="author" />
                         </div>
                     </div>
                     <div className="flex-1 col-05">

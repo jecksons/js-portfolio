@@ -150,7 +150,7 @@ function ExperienceDetail({data}) {
                 <label >{t(data.office)}</label>
             </div>
             <div className={styles.xpIcon}>
-                <Image  src={data.current ? rocketImg : saturnImg} />
+                <Image  src={data.current ? rocketImg : saturnImg}  alt="experience card" />
             </div>
             <section className='col-1 align-start '>
                 <div className={`row-05 flex-wrap align-end `}>
@@ -185,7 +185,7 @@ export default function Experience(props) {
         <div className={`${styles.parentPage} parent-page-id `} id="experience">
             <div className={styles.wrapperImage}>
                 <div className={styles.parentImage}>                    
-                    <Image  src={backImg} layout="fill" objectFit="cover"  />
+                    <Image  src={backImg} layout="fill" objectFit="cover"  alt='milky-way' />
                 </div>
             </div>                       
             <div className='row just-center'>

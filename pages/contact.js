@@ -16,13 +16,13 @@ export default function Contact(props) {
                 <div className="row flex-wrap just-center pad-1 align-start">
                     <a href='https://www.linkedin.com/in/jecksonschwengber/' className={styles.contactLink}>
                         <div>
-                            <Image src={linkedinImg} />
+                            <Image src={linkedinImg} alt="linkedin" />
                         </div>
                         @jecksonschwengber
                     </a>
                     <a href='mailto:jeckson.es@gmail.com' className={styles.contactLink}>
                         <div>
-                            <Image src={emailImg} />
+                            <Image src={emailImg} alt="email" />
                         </div>
                         jeckson.es@gmail.com
                     </a>

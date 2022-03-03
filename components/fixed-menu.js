@@ -37,7 +37,7 @@ export default function FixedMenu({currentMenu}) {
         <div className='fixed-menu'>
             <div className='pos-relative' onMouseEnter={() => setIsExpanded(true)} onMouseLeave={() => setIsExpanded(false)} >
                 <button className={`fixed-menu-button ${isExpanded ? 'expanded' : ''}`}  onClick={() => setIsExpanded(p => !p)} >
-                    <Image src={icon} />
+                    <Image src={icon} alt="menu" />
                     Menu
                 </button>
                 <nav className={ `fixed-menu-content ${isExpanded ? 'expanded' : ''}`}>
