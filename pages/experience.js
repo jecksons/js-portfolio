@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import rocketImg from '../media/rocket.webp';
 import saturnImg from '../media/saturn.webp';
 import { useState } from 'react';
+import { t } from 'i18next';
 
 
 const CurrentXpItem =  {
@@ -32,7 +33,8 @@ const CurrentXpItem =  {
         'NGINX',
         'Git',
         'Docker',
-        'Express'
+        'Express',
+        'Figma'
     ]
 };
 
@@ -154,12 +156,12 @@ function ExperienceDetail({data}) {
             </div>
             <section className='col-1 align-start '>
                 <div className={`row-05 flex-wrap align-end `}>
-                        <label className='color-black-2 font-bold'>{t(data.place)}</label>
-                        <label className='color-grey font-75'>| {t(data.duration)}</label>
+                        <label className={'font-bold'}>{t(data.place)}</label>
+                        <label className='color-white-2 font-75'>| {t(data.duration)}</label>
                 </div>
                 <div className={styles.xpCardContent}>
                     <ul className={styles.listTask} >
-                        {data.tasks.map((itm, idx) =>  <li key={idx} className='color-black-2' >{t(itm)};</li>)}
+                        {data.tasks.map((itm, idx) =>  <li key={idx}  >{t(itm)};</li>)}
                     </ul>
                     <ul className={styles.listTechs}>
                         {data.techs.map((itm, idx) => <li key={idx} className='color-black-2' >{itm}</li>)}
@@ -188,7 +190,8 @@ export default function Experience(props) {
                     <Image  src={backImg} layout="fill" objectFit="cover"  alt='milky-way' />
                 </div>
             </div>                       
-            <div className='row just-center'>
+            <h1 className={styles.pageTitle}>{t('experience')}</h1>
+            <div className='row just-center align-start'>
                 <ul className={`${styles.xpItems} ${styles.xpColA} `}>
                     {splitItems[0].map((itm, idx) => <ExperienceDetail key={idx} data={itm} /> )}
                 </ul>

@@ -2,6 +2,7 @@ div.parentPage{
     display: flex;
     flex-direction: column;
     position: relative;
+    align-items: center;
 }
 
 div.wrapperImage{
@@ -13,6 +14,14 @@ div.wrapperImage{
     z-index: -1;
 }
 
+
+h1.pageTitle{
+    font-size: 3rem;
+    margin: 3rem 0 2rem;
+    letter-spacing: .5rem;
+    font-weight: 600;
+    cursor: default;
+}
 
 div.parentImage{
     min-height: 100vh;
@@ -28,7 +37,7 @@ ul.listTask{
 }
 
 ul.listTask * {
-    color: #333333;
+    color: #fff;
     font-size: 0.875rem;
     line-height: 1.5rem;
 }
@@ -38,35 +47,19 @@ div.xpTitle{
     top: 0;
     transform: translateY(-50%);    
     border-radius: 20px;    
-    background-color: #fff;    
+    background-color: #505050; 
     box-shadow: 0 4px 4px rgba(0,0,0, 0.25 );        
     box-sizing: border-box;
     display: flex;
 }
 
 div.xpTitle > label{
-    color: #333333;
+    color: #fafafa;
     font-weight: 600;
-    padding: 0.5rem 0;    
-    margin: 0 1rem;
-    border-top: 3px solid #fff ;   
-    border-bottom: 3px solid  var(--action); 
+    padding: 0.75rem 0;  
+    margin: 0 1rem;    
 }
 
-div.xpIconOld{
-    position: absolute;
-    top: 1.75rem;
-    height: 46px;
-    width: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: #fff;
-    box-shadow: 0 4px 4px rgba(0,0,0, 0.25 );        
-    right: -3.5rem;
-    z-index: 10;
-}
 
 div.xpIcon{
     position: absolute;
@@ -104,6 +97,7 @@ ul.xpColA::after{
     height: calc(100% - 15rem);
     width: 2px;
     background-color: #707070;
+    z-index: -1;
 }
 
 ul.xpColA > .xpCard::after{
@@ -113,13 +107,18 @@ ul.xpColA > .xpCard::after{
     top: 3rem;    
     width: 2.15rem;
     height: 2px;
-    background-color: #707070;
+    background-color: #707070;    
 }
 
 ul.xpColB div.xpIcon{
     right: unset;
     left: -3.75rem;
 }
+
+ul.xpColA div.xpIcon{
+    z-index: 20;
+}
+
 
 ul.xpColB::before{
     content: " ";
@@ -129,6 +128,7 @@ ul.xpColB::before{
     height: calc(100% - 15rem);
     width: 2px;
     background-color: #707070;
+    z-index: -1;
 }
 
 
@@ -149,11 +149,12 @@ li.xpCard{
     max-width: 36rem;
     flex-direction: column;
     padding: 2rem 1.5rem 1.5rem;
-    background-color: #E0E0E0;
+    background-color: rgba(144, 144, 144, 0.2);
+    backdrop-filter: blur(10px);
     border-radius: 10px;
     position: relative;
     box-sizing: border-box;    
-    border: 3px solid #e0e0e0;
+    border: 3px solid transparent;
     cursor: default;
 }
 
@@ -201,6 +202,7 @@ ul.xpColSingle::after{
     height: calc(100% - 15.1rem);
     width: 2px;
     background-color: #707070;
+    z-index: -1;
 }
 
 ul.xpColSingle > .xpCard::after{
@@ -302,6 +304,12 @@ ul.xpColSingle > .xpCard::after{
     li.xpCard{                
         padding: 1.5rem 1rem; 
     }
+
+    h1.pageTitle{
+        font-size: 2rem;
+        margin: 2.5rem 0 1rem;
+    }
+    
 
     
 }

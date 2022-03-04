@@ -1,8 +1,8 @@
 import PageContent from "../components/page-content";
 import styles from "../styles/Apresentation.module.css";
 import logo from '../media/logo.png';
-import brazilFlag from '../media/brazil.png';
-import usFlag from '../media/united-states.png';
+import brazilFlag from '../media/brazil.webp';
+import usFlag from '../media/usa.webp';
 import photoBig from '../media/photo-big.webp';
 import Image from 'next/image';
 import { useTranslation } from "react-i18next";
@@ -44,7 +44,8 @@ export default function Apresentation(props) {
                     <p >{t('first-note')}</p>
                     <div className="row-1 width-100 just-start">
                         <Link  to={'about-me'} smooth={true} className="btn-action">{t('who-i-am')}</Link>                        
-                        <a className="btn-action">{t('my-projects')} </a>
+                        <Link  to={'projects'} smooth={true} className="btn-action">{t('projects')}</Link>                        
+                        
                     </div>
                 </article>                               
             </div>                        

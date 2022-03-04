@@ -1,0 +1,333 @@
+div.pageContent{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;       
+    background-color: #333333; 
+}
+
+
+h1.title{
+    padding: 4rem;
+    background-color: #333333;
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+}
+
+div.parentProjectList{
+    flex: 1;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(68.46% 68.46% at 50% 50%, rgba(192, 192, 192, 0.6) 0%, rgba(117, 119, 128, 0) 100%);
+    filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25));
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.25);
+}
+
+ul.projectList{
+    display: flex;
+    flex-direction: column;
+}
+
+
+div.parentProject{
+    flex: 1;    
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+div.centerContent{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+}
+
+div.normalContent{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-between;
+}
+
+div.centerContent p{
+    line-height: 1.5rem;
+}
+
+article.projectCard{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    color: #333333;
+    padding: 1.5rem;        
+    max-width: 37rem;
+    min-height: 26rem;
+    gap: 1rem;    
+}
+
+article.projectCard label{
+    color: #333333;
+}
+
+ul.projectFeatures{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5rem;
+    list-style: disc;
+    list-style-position: inside;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+div.imgPreview{
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    transform: translateY(-50%);
+    height: 110px;
+    width: 207px;
+    border-radius: 6px;
+    box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.25);        
+}
+
+div.imgPreview:hover div.imgPreviewOverlay{
+    height: 100%;
+    bottom: 0;
+}
+
+div.imgPreview:hover div.imgPreviewOverlay > label{
+    display: block;
+}
+
+
+div.imgPreview img{
+    border-radius: 6px;
+}
+
+a.playButton{
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    right: 1rem;
+    border-radius: 50%;    
+    flex-direction: row;    
+    display: flex;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    padding: 0.6rem;
+    background-color: var(--action);
+    color: #333333;
+    z-index: 10;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);    
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+a.playButton:hover{
+    background-color: var(--action-hover);
+}
+
+
+a.playButton:active{
+    transform: translate(2px, 55%);
+}
+
+a.playButton > div{
+    width: 4px;
+    height: 18px;
+}
+
+
+div.imgPreviewOverlay{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--action-hover);
+    height: 0;    
+    width: 100%;
+    bottom: 100%;
+    opacity: 0.7;
+    border-radius: 6px;
+    transition: 0.5s ease;
+}
+
+div.imgPreviewOverlay > label{
+    font-weight: bold;
+    color: #333333;
+    display: none;
+    overflow: hidden;
+}
+
+ul.toolList{
+    display: flex;    
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;    
+    margin-top: 1rem;
+}
+
+ul.toolList > li{
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+}
+
+
+a.btnSource{
+    color: #333333;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem; 
+    font-size: 0.875rem;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+a.btnSource:hover{
+    background-color: #eaeaea;
+}
+
+
+div.projectThumb{
+    height: 250px;
+    width: 250px;
+    clip-path: polygon(50% 0%, 100% 25%, 100%  75%,  50% 100%, 0% 75%, 0% 25%);
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;    
+}
+
+div.parentThumb:not(:first-child)  {
+    margin-top: -3rem;
+    margin-left: 8.25rem;
+    
+}
+
+div.imgPreviewContainer{
+    position: relative;
+    width: 207px;
+    height: 110px;    
+}
+
+div.parentThumb{
+    position: relative;
+}
+
+div.parentThumb::before {
+    position: absolute;
+    content: " ";
+    height: 50px;
+    width: 50px;
+    background-color: cyan;
+    left: 30%;
+    top: 50%;    
+    box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.4);    
+}
+
+
+div.projectThumbselected{    
+    filter: grayscale(0);
+}
+
+
+div.mobileContent{
+    display: none;
+    flex-direction: column;    
+    align-items: center;
+    background-color: #fafafa;
+    padding: 3rem;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+ul.projectContinuousList{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    margin-top: 2rem;    
+}
+
+
+@media only screen and (max-width: 1000px) {
+    div.mobileContent{
+        display: flex;
+    }
+
+    div.normalContent{
+        display: none;        
+    }
+
+}
+
+@media only screen and (max-width: 520px){
+
+    div.imgPreview{
+        position: relative;
+        top: unset;
+        right: unset;
+        transform: unset;
+    }
+
+    div.mobileContent{
+        padding: 1.5rem;        
+    }
+
+    ul.projectContinuousList{
+        gap: 2rem;
+        margin-top: 0; 
+    }    
+
+    h1.title{
+        padding: 2rem;        
+        font-size: 1.5rem;        
+    }
+
+
+    a.playButton{        
+        bottom: unset;
+        left: 50%;
+        top: 50%;        
+        transform: translate(-50%, -50%);
+        right: unset;
+    }
+
+    div.imgPreviewOverlay{
+        display: none;
+    }
+    
+}
+
+
+@media only screen and (max-width: 400px){
+    
+    div.mobileContent{
+        padding: 1rem;        
+    }
+
+    article.projectCard{
+        padding: 1rem;                
+    }
+
+}
