@@ -20,8 +20,11 @@ export default function Home() {
 
     useEffect(() => {
         setTimeout(() => {
-            gtag.pageview(currSection);        
-            console.log('pageview ' + currSection);
+            try {
+                gtag.pageview(currSection);        
+            } catch (e) {
+                console.log(e);
+            }                        
         }, 5000);
         
     }, [currSection]);

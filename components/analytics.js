@@ -5,10 +5,12 @@ const Analytics = () => (
   <>
     <Script
       strategy="afterInteractive"
+      id='tag-google'
       src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
     />
     <Script
       strategy="afterInteractive"
+      id='tag-google-config'
       dangerouslySetInnerHTML={{
         __html: `
             window.dataLayer = window.dataLayer || [];
