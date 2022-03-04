@@ -73,7 +73,7 @@ function getToolImg(tool) {
     return reactImg;
 }
 
-function ProjectCard({project}) {
+function ProjectCard({project, onPauseToggle}) {
 
     const onClickProjectLink = useCallback(() => {
         gtag.event({
@@ -92,7 +92,7 @@ function ProjectCard({project}) {
     }, [project]);
 
     return (
-        <article className={styles.projectCard}>            
+        <article className={styles.projectCard}  onMouseEnter={() => onPauseToggle(true)} onMouseLeave={() => onPauseToggle(false)} >            
             <div className='col-05 align-start'>
                 <h3 className='color-black-2 font-125 font-bold'>{t(project.title)}</h3>
                 <a onClick={onClickProjectLink}  className='color-grey no-decoration font-bold font-87' target="_blank" rel='noopener noreferrer'  href={`https://${project.address}`} >{project.address}</a>
@@ -155,21 +155,27 @@ export default function Projects(props) {
     const [currProject, setCurrProject] = useState(ProjectItems[0]);
     const refTimerToggle = useRef(null);
 
-    useEffect(() => {
-        refTimerToggle.current = setInterval(
-            () => setCurrProject(p => p === ProjectItems[0] ? ProjectItems[1] : ProjectItems[0] , 
-                ), 4000);
-        return () => {
-            if (refTimerToggle.current) {
-                clearInterval(refTimerToggle.current);
-            }
+    const handlePauseToggle = useCallback((pause) => {
+        if (refTimerToggle.current) {
+            clearInterval(refTimerToggle.current);
+            refTimerToggle.current = null;
+        }
+        if (!pause) {
+            refTimerToggle.current = setInterval(
+                () => setCurrProject(p => p === ProjectItems[0] ? ProjectItems[1] : ProjectItems[0] , 
+                    ), 4000);            
         }
     }, [refTimerToggle]);
 
+    useEffect(() => {
+        handlePauseToggle(false);        
+        return () => handlePauseToggle(true);
+    }, [handlePauseToggle]);
+
+
+
     const manualSelectItem = useCallback((item) => {
-        if (refTimerToggle.current) {
-            clearInterval(refTimerToggle.current);
-        }
+        handlePauseToggle(false);
         setCurrProject(item);
     }, [refTimerToggle, setCurrProject]);
 
@@ -180,11 +186,11 @@ export default function Projects(props) {
                 <div className={styles.normalContent}>
                     <div className={styles.parentProjectList}>
                         <ul className={styles.projectList}>                    
-                            {ProjectItems.map((itm, idx) => <ProjectThumb key={idx} project={itm}  selected={itm.title === currProject.title}  onSelect={manualSelectItem} /> )}
+                            {ProjectItems.map((itm, idx) => <ProjectThumb key={idx} project={itm}  selected={itm.title === currProject.title}  onSelect={manualSelectItem}  /> )}
                         </ul>
                     </div>                
                     <div className={styles.parentProject}>
-                        <ProjectCard project={currProject} />                   
+                        <ProjectCard project={currProject} onPauseToggle={handlePauseToggle} />                   
                     </div>                
                 </div>
                 <div className={styles.mobileContent}>

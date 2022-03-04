@@ -11,16 +11,6 @@ import Image from 'next/image';
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 
-/* 
-
-<button className="btn" onClick={() => i18n.changeLanguage('en-US')}>
-                                <Image src={usFlag} width={32}  alt="usa flag" />
-                            </button>
-                            <button className="btn" onClick={() => i18n.changeLanguage('pt-BR')}>
-                                <Image src={brazilFlag} width={32} alt="brazil flag" />
-                            </button>
-
-*/
 
 export default function Apresentation(props) {
 
