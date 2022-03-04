@@ -6,14 +6,20 @@ import Apresentation from "./apresentation";
 import Contact from "./contact";
 import Experience from "./experience";
 import SolutionBuilder from "./solution-builder";
+import ReactGA from 'react-ga';
+import Projects from "./projects";
 
+ReactGA.initialize('G-KL372Z16P3');
 
 export default function Home() {
-    
-
+        
     const refTimeoutCurrSection = useState(null);
 
     const [currSection, setCurrSection] = useState('home');
+
+    useEffect(() => {
+        ReactGA.pageview(currSection);        
+    }, [currSection]);
 
     const getCurrSection = useCallback(() => {
 
@@ -55,6 +61,7 @@ export default function Home() {
             <AboutMe />
             <SolutionBuilder />
             <Experience />
+            <Projects />
             <Contact />
         </div>
     )

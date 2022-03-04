@@ -22,6 +22,10 @@ const MenuItems = [
         caption: 'experience'
     },
     {
+        location: 'projects',
+        caption: 'projects'
+    },
+    {
         location: 'contact',
         caption: 'contact'
     },
