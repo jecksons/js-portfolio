@@ -2,7 +2,7 @@ import PageContent from "../components/page-content";
 import styles from '../styles/SolutionBuilder.module.css';
 import tableImg from '../media/table.webp';
 import Image from "next/image";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 const SolutionSteps = [
     'solution-identify',
@@ -22,7 +22,7 @@ export default function SolutionBuilder(props) {
         <div className={`${styles.parentPage} parent-page-id `}  id="solution-builder" >
             <div className={`${styles.wrapperImage} `} >
                 <div className={styles.parentImage}>                    
-                    <Image  src={tableImg}  alt="people table" />
+                    <Image  src={tableImg} layout="fill" objectFit="cover"  alt="people table" />
                 </div>
             </div>            
             <div className={styles.backArticle}>

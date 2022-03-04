@@ -1,7 +1,7 @@
 import { t } from 'i18next';
 import Image from 'next/image';
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "next-i18next";
 import styles from '../styles/Projects.module.css';
 import jktrackerImg from '../media/jktracker.webp';
 import tobyourselfImg from '../media/2byourself.webp';

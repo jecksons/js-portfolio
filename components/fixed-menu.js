@@ -2,7 +2,7 @@ import Image from 'next/image';
 import icon from '../media/fast-forward.webp';
 import { useState } from 'react';
 import { Link } from 'react-scroll';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "next-i18next";
 
 const MenuItems = [
     {

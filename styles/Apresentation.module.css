@@ -65,6 +65,9 @@ section.languageSelection > button:hover{
     border: 1px solid #f0f0f0;
 }
 
+div.photoSmall{
+    display: none;
+}
 
 .initialArticle h2{
     font-size: 3rem;
@@ -128,8 +131,12 @@ div.backShadow{
 @media only screen and (max-width: 940px)  {
 
     div.backImage{
-        position: initial;
-        min-width: 20vh;        
+        display: none;
+    }
+
+    div.photoSmall{
+        display: flex;
+        max-width: 300px;
     }
 
     .initialArticle{
@@ -202,6 +209,11 @@ div.backShadow{
 
     .parentApresentation{
         padding: 1rem;
+    }
+
+
+    div.photoSmall{
+        max-width: calc(100% - 2rem);
     }
     
 }
