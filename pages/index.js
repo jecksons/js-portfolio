@@ -1,24 +1,29 @@
 import Head from "next/head";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import FixedMenu from "../components/fixed-menu";
 import AboutMe from "./about-me";
 import Apresentation from "./apresentation";
 import Contact from "./contact";
 import Experience from "./experience";
 import SolutionBuilder from "./solution-builder";
-import ReactGA from 'react-ga';
+import * as gtag from '../components/analytics-controller';
 import Projects from "./projects";
 
-ReactGA.initialize('G-KL372Z16P3');
+
 
 export default function Home() {
         
-    const refTimeoutCurrSection = useState(null);
+    const refTimeoutCurrSection = useRef(null);
 
     const [currSection, setCurrSection] = useState('home');
+   
 
     useEffect(() => {
-        ReactGA.pageview(currSection);        
+        setTimeout(() => {
+            gtag.pageview(currSection);        
+            console.log('pageview ' + currSection);
+        }, 5000);
+        
     }, [currSection]);
 
     const getCurrSection = useCallback(() => {

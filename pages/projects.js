@@ -13,7 +13,7 @@ import mysqlImg from '../media/mysql.webp';
 import figmaImg from '../media/figma.webp';
 import nodeImg from '../media/node.webp';
 import expressImg from '../media/express.webp';
-import ReactGA from 'react-ga';
+import * as gtag from '../components/analytics-controller';
 
 const ProjectItems = [
     {
@@ -76,7 +76,7 @@ function getToolImg(tool) {
 function ProjectCard({project}) {
 
     const onClickProjectLink = useCallback(() => {
-        ReactGA.event({
+        gtag.event({
             category: 'Projects',
             action: 'Access',
             label: project.title
@@ -84,7 +84,7 @@ function ProjectCard({project}) {
     }, [project]);
 
     const onClickSources = useCallback(() => {
-        ReactGA.event({
+        gtag.event({
             category: 'Projects',
             action: 'Sources',
             label: project.title
