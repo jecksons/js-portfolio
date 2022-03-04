@@ -14,7 +14,13 @@ const Analytics = () => (
       dangerouslySetInnerHTML={{
         __html: `
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            var host = window.location.hostname;
+            if (host != "localhost") {
+                function gtag(){dataLayer.push(arguments);}
+            // your google analytics code goes here
+            } else {
+                function gtag(){}
+            }            
             gtag('js', new Date());
             gtag('config', '${GA_TRACKING_ID}', {
               page_path: window.location.pathname,

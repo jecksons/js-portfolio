@@ -8,7 +8,16 @@ import Experience from "./experience";
 import SolutionBuilder from "./solution-builder";
 import * as gtag from '../components/analytics-controller';
 import Projects from "./projects";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+
+export async function getStaticProps({locale}) {
+    return {
+        props: {
+            ...await serverSideTranslations(locale, ['common']),
+        }
+    }
+}
 
 
 export default function Home() {

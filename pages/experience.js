@@ -1,7 +1,7 @@
 import styles from '../styles/Experience.module.css';
 import backImg from '../media/milky-way.webp';
 import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "next-i18next";
 import rocketImg from '../media/rocket.webp';
 import saturnImg from '../media/saturn.webp';
 import { useState } from 'react';

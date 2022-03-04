@@ -313,6 +313,11 @@ ul.projectContinuousList{
         right: unset;
     }
 
+    a.playButton:active{
+        transform: translate(-45%, -45%);
+    }
+    
+
     div.imgPreviewOverlay{
         display: none;
     }

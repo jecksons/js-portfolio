@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import PageContent from "../components/page-content";
 import styles from '../styles/AboutMe.module.css';
 import laptopImg from '../media/laptop.webp';
