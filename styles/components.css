@@ -1,8 +1,7 @@
 
 div.fixed-menu{
     position: fixed;
-    right: -2rem;    
-    
+    right: -2rem;        
     top: 10rem;
     z-index: 9999;
 }
@@ -76,5 +75,139 @@ a.btn-side-menu-current:hover{
 a.btn-side-menu-current{    
     border-left: 3px solid #333333;
     font-weight: 600;
+}
 
+div.app-menu{
+    display: none;        
+}
+
+button.app-menu-button{
+    padding: 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+div.app-menu.sticky{
+    background-color: rgba(32, 32, 32, 0.7);
+    position: fixed;    
+    right: 0;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 1rem 1rem;
+    box-sizing: border-box;
+    box-shadow: 0 4px 4px 0 rgba(0, 0,0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+div.app-menu-overlay{
+    visibility: hidden;    
+    position: fixed;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+div.app-menu-overlay.expanded{
+    visibility: visible;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200vh;    
+    opacity: 0;
+    z-index: 98;
+}
+
+
+div.app-menu-overlay.expanded.sticky{
+    top: 56px;    
+    opacity: 0.7;                
+}
+
+nav.app-menu-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    visibility: hidden;            
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    overflow: hidden;
+    background-color: #fff;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 99;    
+}
+
+nav.app-menu-content.expanded{
+    visibility: visible;                
+    pointer-events: all;
+    top: calc(100% + 1rem);
+    right: 0;
+    opacity: 1;
+    height: auto;
+    width: max-content;    
+}
+
+a.btn-up-screen{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 50%;
+    z-index: 999;
+    display: none;
+    box-shadow: inset -2px -2px 4px 0 rgba(0, 0,0, 0.5),
+                2px 2px 4px 0 rgba(0, 0,0, 0.5);
+}
+
+a.btn-up-screen.show{
+    display: initial;
+}
+
+a.btn-up-screen:active{
+    right: 0.8rem;
+    bottom: 0.8rem;
+}
+
+
+@media only screen and (max-width: 768px) {
+    div.fixed-menu{
+        display: none;
+    }
+
+    nav.fixed-menu-content{
+        display: none;
+    }
+
+    div.app-menu{
+        display: initial;
+    }
+
+    div.app-menu.sticky{
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    div.app-menu{
+        top: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    div.app-menu{
+        top: 3rem;
+    }
 }

@@ -185,16 +185,13 @@ div.backShadow{
     .imgLogo{
         display: none;
     }
-    
-}
 
-
-@media only screen and (max-width: 500px) {
     section.languageSelection{        
         top:unset;
         right: unset;
         position: initial;
     }
+    
 }
 
 @media only screen and (max-width: 400px) {
@@ -206,10 +203,12 @@ div.backShadow{
         gap: 1rem;
     }
 
-
     .parentApresentation{
-        padding: 1rem;
+        padding: 2.5rem 1rem;
     }
+
+
+    
 
 
     div.photoSmall{

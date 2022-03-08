@@ -10,9 +10,10 @@ import Link from "react-scroll/modules/components/Link";
 import Image from 'next/image';
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import AppMenu from "../components/app-menu";
 
 
-export default function Apresentation(props) {
+export default function Apresentation({showSticky, currentMenu}) {
 
     const { t} = useTranslation('common');    
     const router = useRouter();
@@ -25,7 +26,10 @@ export default function Apresentation(props) {
                         <Image  src={logo} width={75} height={75} alt="logo" />
                     </div>
                     <div className="col-05 align-start">
-                        <h1 className={styles.title}>Jéckson Schwengber</h1>
+                        <div className="row-1 width-100 ">
+                            <h1 className={styles.title}>Jéckson Schwengber</h1>
+                            {!showSticky && <AppMenu showSticky={false} currentMenu={currentMenu} /> }
+                        </div>                        
                         <h3 className={styles.subtitle}>JAVASCRIPT FULLSTACK SOFTWARE ENGINEER</h3>
                         <section className={styles.languageSelection}>
                             <LinkNext  href="/" locale={'en'}>
