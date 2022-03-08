@@ -9,6 +9,8 @@ import SolutionBuilder from "./solution-builder";
 import * as gtag from '../components/analytics-controller';
 import Projects from "./projects";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import AppMenu from "../components/app-menu";
+import FixedUpButton from "../components/fixed-up-button";
 
 
 export async function getStaticProps({locale}) {
@@ -25,7 +27,7 @@ export default function Home() {
     const refTimeoutCurrSection = useRef(null);
 
     const [currSection, setCurrSection] = useState('home');
-   
+    const [showStickyHeader, setShowStickHeader] = useState(false);   
 
     useEffect(() => {
         setTimeout(() => {
@@ -38,11 +40,10 @@ export default function Home() {
         
     }, [currSection]);
 
-    const getCurrSection = useCallback(() => {
-
+    const processCurrPos = useCallback(() => {
         if (refTimeoutCurrSection.current) {
             clearTimeout(refTimeoutCurrSection.current);
-        }
+        }        
         refTimeoutCurrSection.current = setTimeout(() => {
             const el = document.elementFromPoint(window.innerWidth / 2, 100);
             if (el) {
@@ -53,16 +54,15 @@ export default function Home() {
                     }
                 }
             }            
-        }, [200]);
-
-        
-    }, [refTimeoutCurrSection, setCurrSection]);
+            setShowStickHeader(window.scrollY > 200);                    
+        }, [150]);        
+    }, [refTimeoutCurrSection, setCurrSection, setShowStickHeader]);
 
     useEffect(() => {
-        getCurrSection();
-        window.onscroll = () => getCurrSection();
+        processCurrPos();
+        window.onscroll = () => processCurrPos();
         return () => window.onscroll = null;
-    }, [getCurrSection]);
+    }, [processCurrPos]);
 
 
     return (
@@ -74,7 +74,9 @@ export default function Home() {
                 <meta name="author" content="Jéckson Schwengber" />
             </Head>
             <FixedMenu currentMenu={currSection} />
-            <Apresentation />
+            {showStickyHeader && <AppMenu currentMenu={currSection}  showSticky={showStickyHeader} onGoHome={() => setShowStickHeader(false)}  />}
+            <FixedUpButton  show={showStickyHeader}  />
+            <Apresentation showSticky={showStickyHeader} currentMenu={currSection} />
             <AboutMe />
             <SolutionBuilder />
             <Experience />

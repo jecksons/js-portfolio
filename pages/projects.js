@@ -92,7 +92,7 @@ function ProjectCard({project, onPauseToggle}) {
     }, [project]);
 
     return (
-        <article className={styles.projectCard}  onMouseEnter={() => onPauseToggle(true)} onMouseLeave={() => onPauseToggle(false)} >            
+        <article className={styles.projectCard}  onMouseEnter={onPauseToggle? () => onPauseToggle(true) : null} onMouseLeave={onPauseToggle ? () => onPauseToggle(false) : null} >            
             <div className='col-05 align-start'>
                 <h3 className='color-black-2 font-125 font-bold'>{t(project.title)}</h3>
                 <a onClick={onClickProjectLink}  className='color-grey no-decoration font-bold font-87' target="_blank" rel='noopener noreferrer'  href={`https://${project.address}`} >{project.address}</a>
@@ -177,7 +177,7 @@ export default function Projects(props) {
     const manualSelectItem = useCallback((item) => {
         handlePauseToggle(false);
         setCurrProject(item);
-    }, [refTimerToggle, setCurrProject]);
+    }, [refTimerToggle, setCurrProject, handlePauseToggle]);
 
     return (
         <div className={`${styles.pageContent} parent-page-id `} id="projects" >

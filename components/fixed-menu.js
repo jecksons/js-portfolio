@@ -3,33 +3,7 @@ import icon from '../media/fast-forward.webp';
 import { useState } from 'react';
 import { Link } from 'react-scroll';
 import { useTranslation } from "next-i18next";
-
-const MenuItems = [
-    {
-        location: 'home',
-        caption: 'home'
-    },
-    {
-        location: 'about-me',
-        caption: 'who-i-am'
-    },
-    {
-        location: 'solution-builder',
-        caption: 'solution-builder'
-    },
-    {
-        location: 'experience',
-        caption: 'experience'
-    },
-    {
-        location: 'projects',
-        caption: 'projects'
-    },
-    {
-        location: 'contact',
-        caption: 'contact'
-    },
-]
+import MenuItems from '../utils/menu-items';
 
 
 export default function FixedMenu({currentMenu}) {
@@ -57,5 +31,4 @@ export default function FixedMenu({currentMenu}) {
             </div>
         </div>
     )
-
 }
